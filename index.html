@@ -1,0 +1,1643 @@
+
+<!-- ENTRADA DA DIANA -->
+<section class="diana-evento">
+    <p class="diana-etiqueta">⚠️ EVENTO ESPECIAL</p>
+
+    <h2>O servidor nunca mais será o mesmo...</h2>
+
+    <p>Estás preparada para enfrentar o lobby?</p>
+
+    <button id="botaoEntradaDiana" class="botao-diana">
+        🚨 Invocar a Diana
+    </button>
+</section>
+
+<!-- CENA ANIMADA -->
+<div id="cenaDiana" class="cena-diana">
+    <div class="cartao-diana">
+        <span class="diana-sirene">🚨</span>
+
+        <p class="diana-alerta">ALERTA MÁXIMO</p>
+
+        <h2>DIANA ENTROU NO SERVIDOR!</h2>
+
+        <p id="mensagemDiana">
+            O lobby está oficialmente em perigo.
+        </p>
+
+        <div class="diana-estatisticas">
+            <span>🎯 Pontaria: suspeita</span>
+            <span>🧠 Estratégia: confidencial</span>
+            <span>😈 Paciência para o Jiba: 0%</span>
+        </div>
+
+        <p class="diana-rodape">
+            Jiba, prepara a tua próxima desculpa...
+        </p>
+
+        <button id="fecharCenaDiana" class="botao-diana">
+            Entrar no lobby
+        </button>
+    </div>
+</div>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d0f">
+    <meta name="description" content="The Last Bot Alive: o dossier confidencial de Jiba_Peek.">
+    <title>The Last Bot Alive | JIBA_peek</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- FUNDO ANIMADO GAMING -->
+<canvas id="particulasGaming" aria-hidden="true"></canvas>
+
+<header class="topo">
+    <a href="#inicio" class="logo">THE LAST <span>BOT</span> ALIVE</a>
+    <nav aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#perfil">Jogador</a>
+        <a href="#equipamento">Arsenal</a>
+        <a href="#desculpas">Desculpas</a>
+        <a href="#relatorio">Relatório</a>
+        <a href="#missoes">Missões</a>
+        <a href="#operacao">Mini-jogo</a>
+        <a href="#certificado">Certificado</a>
+    </nav>
+</header>
+
+<!-- PERFIL OFICIAL DO JIBA_peek -->
+
+<section class="perfil-jiba">
+    <div class="perfil-cabecalho">
+        <span class="perfil-etiqueta">PLAYER DATABASE // CS2</span>
+        <span class="perfil-online">
+            <span class="ponto-online"></span> ONLINE (INFELIZMENTE)
+        </span>
+    </div>
+
+    <div class="perfil-principal">
+        <img
+            src="imagens/mike.jpg"
+            alt="Fotografia de perfil do Jiba Peek"
+            class="foto-perfil-jiba"
+        >
+
+        <div class="dados-jiba">
+            <p class="perfil-subtitulo">COUNTER-STRIKE 2</p>
+            <h2>Jiba_<span>Peek</span></h2>
+            <p class="perfil-descricao">
+                Profissional em dizer «só mais uma».
+                Especialista em encontrar desculpas.
+            </p>
+
+            <div class="perfil-etiquetas">
+                <span>🇵🇹 PORTUGAL</span>
+                <span>🎮 FACEIT LEVEL 10</span>
+            </div>
+        </div>
+
+        <div class="nivel-faceit">
+            <span>FACEIT</span>
+            <strong>10</strong>
+            <small>SUPREMO DO LOBBY</small>
+        </div>
+    </div>
+
+    <div class="estatisticas-jiba">
+        <div class="estatistica-jiba">
+            <span>K/D</span>
+            <strong>???</strong>
+            <small>Segredo de Estado</small>
+        </div>
+
+        <div class="estatistica-jiba">
+            <span>HEADSHOTS</span>
+            <strong>37%</strong>
+            <small>Segundo o próprio</small>
+        </div>
+
+        <div class="estatistica-jiba">
+            <span>DESCULPAS</span>
+            <strong>999+</strong>
+            <small>Recorde mundial</small>
+        </div>
+
+        <div class="estatistica-jiba">
+            <span>CONFIANÇA</span>
+            <strong>100%</strong>
+            <small>Pontaria por confirmar</small>
+        </div>
+    </div>
+
+    <div class="medalhas-jiba">
+        <h3>🏆 CONQUISTAS DO JOGADOR</h3>
+
+        <div class="lista-medalhas-jiba">
+            <div>🥇 Rei do «Só Mais Uma»</div>
+            <div>🥈 Especialista em Lag</div>
+            <div>🥉 Mike Tyson do Teclado</div>
+        </div>
+    </div>
+
+    <button id="analisarJiba" class="botao-analisar-jiba">
+        🔎 ANALISAR ESTE JOGADOR
+    </button>
+
+    <div id="relatorioJiba" class="relatorio-jiba" aria-live="polite"></div>
+
+    <p class="aviso-perfil-jiba">
+        Perfil de paródia. Estatísticas inventadas para fins humorísticos.
+    </p>
+</section>
+
+<!-- QUIZ: QUE TIPO DE BOT ÉS? -->
+<section id="quizBot" class="quiz-bot">
+    <div class="quiz-cabecalho">
+        <p class="quiz-etiqueta">🎯 TESTE DE RECRUTAMENTO // CS2</p>
+        <h2>QUE TIPO DE <span>BOT</span> ÉS?</h2>
+        <p>Descobre se és uma lenda do lobby ou um perigo para a própria equipa.</p>
+    </div>
+
+    <div class="quiz-painel">
+        <div class="quiz-progresso">
+            <span id="quizContador">Pergunta 1 de 5</span>
+            <div class="quiz-barra">
+                <div id="quizBarraProgresso"></div>
+            </div>
+        </div>
+
+        <h3 id="quizPergunta">A preparar o teste...</h3>
+
+        <div id="quizRespostas" class="quiz-respostas"></div>
+
+        <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+
+        <button id="quizSeguinte" class="botao-quiz" hidden>
+            Próxima pergunta →
+        </button>
+
+        <div id="quizResultado" class="quiz-resultado" hidden>
+            <h3 id="quizTituloResultado"></h3>
+            <p id="quizTextoResultado"></p>
+            <button id="quizReiniciar" class="botao-quiz">
+                🔄 Jogar novamente
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- REGISTO CRIMINAL DO JIBA -->
+<section id="registo-criminal" class="secao-registo">
+    <div class="registo-cabecalho">
+        <span class="registo-icone">🚨</span>
+        <p class="registo-etiqueta">ARQUIVO CONFIDENCIAL · CS2</p>
+        <h2>Registo Criminal do Jiba</h2>
+        <p>
+            Um registo oficial das atividades suspeitas
+            do jogador mais inocente do lobby. 🤡
+        </p>
+    </div>
+
+    <div class="registo-cartao">
+        <div class="registo-suspeito">
+            <img src="imagens/jiba.jpg" alt="Fotografia do Jiba">
+            <div>
+                <h3>JIBA_peek</h3>
+                <p>Estado: <span>PERIGOSAMENTE SUSPEITO</span></p>
+                <p class="registo-subtexto">
+                    "A culpa nunca é minha!"
+                </p>
+            </div>
+        </div>
+
+        <div class="registo-estatisticas">
+            <div class="registo-estatistica">
+                <span>🤬</span>
+                <h3 id="registo-reclamacoes">0</h3>
+                <p>Reclamações à equipa</p>
+                <button onclick="adicionarCrimeJiba('reclamacoes')">
+                    + Registar reclamação
+                </button>
+            </div>
+
+            <div class="registo-estatistica">
+                <span>👩</span>
+                <h3 id="registo-diana">0</h3>
+                <p>Vezes que culpou a Diana</p>
+                <button onclick="adicionarCrimeJiba('diana')">
+                    + Culpar a Diana
+                </button>
+            </div>
+
+            <div class="registo-estatistica">
+                <span>🛜</span>
+                <h3 id="registo-lag">0</h3>
+                <p>Desculpas de lag</p>
+                <button onclick="adicionarCrimeJiba('lag')">
+                    + Inventar desculpa
+                </button>
+            </div>
+        </div>
+
+        <div class="registo-veredicto">
+            <p>⚖️ VEREDICTO DO TRIBUNAL</p>
+            <h3 id="registo-titulo">Ainda está sob investigação...</h3>
+            <p id="registo-mensagem">
+                O primeiro incidente está prestes a acontecer.
+            </p>
+            <p class="registo-total">
+                Total de incidentes: <strong id="registo-total">0</strong>
+            </p>
+        </div>
+
+        <button class="registo-reset" onclick="limparRegistoJiba()">
+            🗑️ Apagar registo criminal
+        </button>
+    </div>
+</section>
+
+<!-- MAPAS FAVORITOS DO JIBA -->
+
+<section class="mapas-jiba">
+    <div class="mapas-intro">
+        <p class="mapas-etiqueta">JIBA_peek // MAP DATABASE</p>
+        <h2>Os <span>mapas favoritos</span> do suspeito</h2>
+        <p>Três mapas. Mil desculpas. Zero garantias de vitória.</p>
+    </div>
+
+    <div class="mapas-grelha">
+
+        <article class="mapa-card mirage">
+            <img class="mapa-imagem" src="imagens/mirage.jpg" alt="Mapa Mirage do CS2">
+            <span class="mapa-numero">MAP_01</span>
+            <div class="mapa-conteudo">
+                <p>O CLÁSSICO FAVORITO</p>
+                <h3>MIRAGE</h3>
+                <span class="mapa-tag">Especialista em perder o meio</span>
+                <button class="botao-mapa" data-mapa="mirage">
+                    ANALISAR MAPA ↗
+                </button>
+            </div>
+        </article>
+>
+
+        <article class="mapa-card dust2">
+            <img class="mapa-imagem" src="imagens/dust2.jpg" alt="Mapa Dust II do CS2">
+            <span class="mapa-numero">MAP_02</span>
+            <div class="mapa-conteudo">
+                <p>O ETERNO REGRESSO</p>
+                <h3>DUST II</h3>
+                <span class="mapa-tag">A culpa é sempre do lag</span>
+                <button class="botao-mapa" data-mapa="dust2">
+                    ANALISAR MAPA ↗
+                </button>
+            </div>
+        </article>
+
+        <article class="mapa-card anubis">
+            <img class="mapa-imagem" src="imagens/anubis.jpg" alt="Mapa Anubis do CS2">
+            <span class="mapa-numero">MAP_03</span>
+            <div class="mapa-conteudo">
+                <p>AVENTURA NO EGITO</p>
+                <h3>ANUBIS</h3>
+                <span class="mapa-tag">Perdido, mas com confiança</span>
+                <button class="botao-mapa" data-mapa="anubis">
+                    ANALISAR MAPA ↗
+                </button>
+            </div>
+        </article>
+
+    </div>
+
+    <div id="resultadoMapaJiba" class="resultado-mapa-jiba"
+         aria-live="polite">
+        <span>AGUARDANDO ANÁLISE...</span>
+        <p>Escolhe um mapa para descobrir o relatório secreto do Jiba.</p>
+    </div>
+</section>
+<main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+        <div class="hero-conteudo">
+            <p class="etiqueta">CS2 // RELATÓRIO CONFIDENCIAL</p>
+          
+<h1 class="glitch-text" data-text="THE LAST BOT ALIVE">
+    THE LAST<br><span>BOT ALIVE</span>
+</h1>
+
+            <p class="descricao">
+                Há jogadores que carregam a equipa.
+                E depois há aqueles que perguntam:
+                "Quem é que me matou?"
+            </p>
+            <a href="#perfil" class="botao">INVESTIGAR O JOGADOR</a>
+            <p class="hero-nota">⚠️ O perigo para a equipa ainda está por determinar.</p>
+        </div>
+        <div class="hero-numero" aria-hidden="true">02</div>
+    </section>
+
+    <!-- PERFIL -->
+    <section class="secao" id="perfil">
+        <div class="titulo-secao">
+            <p class="etiqueta">FICHEIRO CONFIDENCIAL Nº 001</p>
+            <h2>Conhece a <span>lenda.</span></h2>
+            <p>Uma análise séria de um jogador que talvez não seja assim tão sério.</p>
+        </div>
+
+        <!-- PERFIL DO JOGADOR -->
+        <div class="perfil-jogador">
+            <div class="perfil-imagem">
+                <img src="imagens/personagem.jpg" alt="Personagem do universo Counter-Strike 2" loading="lazy">
+                <div class="perfil-selo">PLAYER DETECTED</div>
+            </div>
+
+            <div class="perfil-info">
+                <p class="numero">IDENTIFICAÇÃO DO SUSPEITO</p>
+                <h3>JIBA_peek</h3>
+                <p>Especialista em aparecer no sítio errado, na altura errada e com uma confiança inexplicavelmente alta.</p>
+
+                <div class="dados-jogador">
+                    <div class="dado">
+                        <span>Função na equipa</span>
+                        <strong>Problema tático</strong>
+                    </div>
+                    <div class="dado">
+                        <span>Nível de confiança</span>
+                        <strong>★★★★★</strong>
+                    </div>
+                    <div class="dado">
+                        <span>Precisão oficial</span>
+                        <strong>Em investigação</strong>
+                    </div>
+                    <div class="dado">
+                        <span>Especialidade</span>
+                        <strong>Arranjar desculpas</strong>
+                    </div>
+                </div>
+
+                <p class="aviso-perfil">* Estatísticas humorísticas, não são dados reais da conta.</p>
+            </div>
+        </div>
+
+        <!-- NOVO PERFIL DA CRIADORA -->
+        <div class="perfil-criadora">
+            <div class="criadora-icon">👑</div>
+
+            <p class="numero">DIREÇÃO GERAL // FICHEIRO Nº 002</p>
+
+            <h3>dianinhapt</h3>
+
+            <p class="criadora-descricao">
+                A mente por detrás deste site.
+                Não joga CS2, mas acompanha o caso e
+                fiscaliza cada desculpa do suspeito.
+            </p>
+
+            <div class="criadora-dados">
+                <div class="dado">
+                    <span>Função</span>
+                    <strong>Diretora do projeto</strong>
+                </div>
+
+                <div class="dado">
+                    <span>Experiência em CS2</span>
+                    <strong>Não joga 😇</strong>
+                </div>
+
+                <div class="dado">
+                    <span>Especialidade</span>
+                    <strong>Fiscalizar desculpas</strong>
+                </div>
+
+                <div class="dado">
+                    <span>Autoridade no site</span>
+                    <strong>100%</strong>
+                </div>
+            </div>
+
+            <p class="criadora-frase">
+                "Não jogo este jogo, mas percebo quando
+                uma desculpa está mal contada."
+            </p>
+
+            <span class="criadora-selo">A CHEFE DO DOSSIER 👑</span>
+        </div>
+
+    </section>
+
+    <!-- ARSENAL -->
+    <section class="secao secao-alternada" id="equipamento">
+        <div class="titulo-secao">
+            <p class="etiqueta">ARSENAL // EQUIPAMENTO</p>
+            <h2>A arma é boa. <span>E a pontaria?</span></h2>
+            <p>O equipamento não pode ser responsabilizado por todas as decisões do jogador.</p>
+        </div>
+
+        <div class="equipamento-cartao">
+            <div class="arma-imagem">
+                <img src="imagens/arma.jpg" alt="Arma do jogo Counter-Strike 2" loading="lazy">
+            </div>
+            <div class="arma-info">
+                <p class="numero">EQUIPAMENTO Nº 001</p>
+                <h3>A arma do crime</h3>
+                <p>Ferramenta de trabalho do suspeito. Os resultados continuam sob avaliação.</p>
+                <ul class="lista-arma">
+                    <li><span>Equipamento</span><strong>Arma favorita</strong></li>
+                    <li><span>Estado</span><strong>Pronta para jogar</strong></li>
+                    <li><span>Responsável pelos falhanços</span><strong>O jogador? 🤔</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTATÍSTICAS -->
+    <section class="secao" id="estatisticas">
+        <div class="titulo-secao">
+            <p class="etiqueta">DADOS NÃO AUDITADOS</p>
+            <h2>Estatísticas <span>suspeitas.</span></h2>
+            <p>Números meramente ilustrativos. Nenhum profissional foi consultado.</p>
+        </div>
+        <div class="grelha">
+            <article class="cartao">
+                <div class="icone">🎯</div>
+                <p class="numero">01 // PRECISÃO</p>
+                <h3>Mira de elite</h3>
+                <p>O adversário está a salvo... até o jogador aprender a apontar.</p>
+            </article>
+            <article class="cartao">
+                <div class="icone">💀</div>
+                <p class="numero">02 // SOBREVIVÊNCIA</p>
+                <h3>Plano de fuga</h3>
+                <p>Entra para ganhar. Sai a perguntar quem estava a defender.</p>
+            </article>
+            <article class="cartao">
+                <div class="icone">🧠</div>
+                <p class="numero">03 // ESTRATÉGIA</p>
+                <h3>Génio tático</h3>
+                <p>O plano era perfeito. Pena que ninguém o conhecesse.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- DESCULPAS -->
+    <section class="secao secao-alternada" id="desculpas">
+        <div class="titulo-secao">
+            <p class="etiqueta">CENTRAL DE JUSTIFICAÇÕES</p>
+            <h2>Não foi culpa <span>minha!</span></h2>
+            <p>Perdeu uma ronda? Temos uma explicação para tudo.</p>
+        </div>
+        <div class="cartao cartao-interativo">
+            <div class="icone">💬</div>
+            <h3>Gerador oficial de desculpas</h3>
+            <p>Carrega no botão para descobrir a justificação da próxima derrota.</p>
+            <button class="botao" id="botao-desculpa" type="button">GERAR DESCULPA</button>
+            <p id="resultado-desculpa" class="resultado" aria-live="polite">À espera da próxima derrota...</p>
+        </div>
+    </section>
+
+    <!-- RELATÓRIO -->
+    <section class="secao" id="relatorio">
+        <div class="titulo-secao">
+            <p class="etiqueta">CENTRAL DE INTELIGÊNCIA // CS2</p>
+            <h2>Relatório de <span>JIBA_peek.</span></h2>
+            <p>A comissão analisou o desempenho do suspeito.</p>
+        </div>
+
+        <div class="relatorio-caixa">
+            <div class="relatorio-cabecalho">
+                <div>
+                    <p class="numero">FICHEIRO DO JOGADOR Nº 001</p>
+                    <h3>JIBA_peek</h3>
+                    <p class="relatorio-subtitulo">Relatório de partida simulado</p>
+                </div>
+                <div class="relatorio-carimbo">CONFIDENCIAL</div>
+            </div>
+
+            <div class="relatorio-estatisticas">
+                <div class="relatorio-dado"><span>ELIMINAÇÕES</span><strong id="relatorio-kills">--</strong></div>
+                <div class="relatorio-dado"><span>MORTES</span><strong id="relatorio-mortes">--</strong></div>
+                <div class="relatorio-dado"><span>ASSISTÊNCIAS</span><strong id="relatorio-assistencias">--</strong></div>
+                <div class="relatorio-dado"><span>CLASSIFICAÇÃO</span><strong id="relatorio-nota">--</strong></div>
+            </div>
+
+            <div class="relatorio-analise">
+                <p class="numero">ANÁLISE DO DESEMPENHO</p>
+                <p id="relatorio-comentario" aria-live="polite">O processo encontra-se aberto.</p>
+            </div>
+
+            <div class="relatorio-veredicto">
+                <span>VEREDICTO DA COMISSÃO</span>
+                <strong id="relatorio-veredicto">AINDA SOB INVESTIGAÇÃO</strong>
+            </div>
+            <button class="botao" id="botao-relatorio" type="button">GERAR NOVO RELATÓRIO</button>
+            <p class="aviso-perfil">* Resultados aleatórios e fictícios.</p>
+        </div>
+    </section>
+
+    <!-- MISSÕES E XP -->
+    <section class="secao secao-alternada" id="missoes">
+        <div class="titulo-secao">
+            <p class="etiqueta">OPERAÇÃO JIBA_peek // MISSÕES</p>
+            <h2>Prova que não és um <span>bot.</span></h2>
+            <p>Completa desafios, ganha XP e desbloqueia medalhas.</p>
+        </div>
+
+        <div class="xp-painel">
+            <div class="xp-topo">
+                <div>
+                    <p class="numero">JOGADOR REGISTADO</p>
+                    <h3>JIBA_peek <span class="nivel-etiqueta" id="nivel-nome">BOT DE SERVIÇO</span></h3>
+                </div>
+                <div class="xp-total">
+                    <strong id="xp-total">0</strong>
+                    <span>XP TOTAL</span>
+                </div>
+            </div>
+            <div class="xp-barra-fundo"><div class="xp-barra" id="xp-barra"></div></div>
+            <p class="xp-progresso" id="xp-progresso">0 XP para o próximo nível.</p>
+            <p class="aviso-perfil">O progresso fica guardado neste navegador.</p>
+        </div>
+
+        <div class="missoes-grelha">
+            <article class="missao-cartao">
+                <div class="missao-icone">🎯</div><p class="numero">MISSÃO 001</p>
+                <h3>Mira de respeito</h3><p>Acertar num adversário sem culpar o rato.</p>
+                <div class="missao-recompensa">+100 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="mira">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-mira">À espera de provas...</span>
+            </article>
+            <article class="missao-cartao">
+                <div class="missao-icone">🧠</div><p class="numero">MISSÃO 002</p>
+                <h3>Génio tático</h3><p>Fazer um plano e avisar a equipa antes de começar.</p>
+                <div class="missao-recompensa">+150 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="tatica">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-tatica">À espera de provas...</span>
+            </article>
+            <article class="missao-cartao">
+                <div class="missao-icone">🤐</div><p class="numero">MISSÃO 003</p>
+                <h3>Sem desculpas</h3><p>Terminar uma partida sem dizer que foi lag.</p>
+                <div class="missao-recompensa">+200 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="desculpas">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-desculpas">À espera de provas...</span>
+            </article>
+            <article class="missao-cartao">
+                <div class="missao-icone">🛡️</div><p class="numero">MISSÃO 004</p>
+                <h3>Último sobrevivente</h3><p>Sobreviver a uma ronda e ajudar a equipa.</p>
+                <div class="missao-recompensa">+250 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="sobrevivente">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-sobrevivente">À espera de provas...</span>
+            </article>
+            <article class="missao-cartao">
+                <div class="missao-icone">💣</div><p class="numero">MISSÃO 005</p>
+                <h3>Operação perfeita</h3><p>Coordenar uma jogada sem confundir a equipa.</p>
+                <div class="missao-recompensa">+300 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="operacao">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-operacao">À espera de provas...</span>
+            </article>
+            <article class="missao-cartao">
+                <div class="missao-icone">🏆</div><p class="numero">MISSÃO 006</p>
+                <h3>Orgulho da equipa</h3><p>Ganhar uma partida e reconhecer o mérito dos colegas.</p>
+                <div class="missao-recompensa">+500 XP</div>
+                <button class="botao botao-missao" type="button" data-missao="equipa">MARCAR COMO CONCLUÍDA</button>
+                <span class="missao-estado" id="estado-equipa">À espera de provas...</span>
+            </article>
+        </div>
+
+        <div class="medalhas-painel">
+            <div class="titulo-secao">
+                <p class="etiqueta">SALA DE TROFÉUS</p>
+                <h2>Medalhas <span>desbloqueáveis.</span></h2>
+                <p>Acumula XP para provar que há talento por detrás do nickname.</p>
+            </div>
+            <div class="medalhas-grelha">
+                <div class="medalha" id="medalha-bronze"><div class="medalha-icone">🥉</div><h3>Bot de Serviço</h3><p>Acumular 100 XP</p><span class="medalha-estado">BLOQUEADA</span></div>
+                <div class="medalha" id="medalha-prata"><div class="medalha-icone">🥈</div><h3>Quase Profissional</h3><p>Acumular 300 XP</p><span class="medalha-estado">BLOQUEADA</span></div>
+                <div class="medalha" id="medalha-ouro"><div class="medalha-icone">🥇</div><h3>Máquina de Headshots</h3><p>Acumular 600 XP</p><span class="medalha-estado">BLOQUEADA</span></div>
+                <div class="medalha" id="medalha-lenda"><div class="medalha-icone">👑</div><h3>Lenda das Desculpas</h3><p>Acumular 1000 XP</p><span class="medalha-estado">BLOQUEADA</span></div>
+            </div>
+        </div>
+        <button class="botao botao-reset" id="botao-reset" type="button">REINICIAR MISSÕES</button>
+        <p class="aviso-perfil">Os pontos são fictícios e não estão ligados à conta Steam.</p>
+    </section>
+
+<!-- DOSSIER POLICIAL DO JIBA_peek -->
+<section id="procurado" class="procurado">
+    <div class="dossier">
+
+        <div class="dossier-topo">
+            <span>POLÍCIA DO COUNTER-STRIKE</span>
+            <span>FICHEIRO Nº 002</span>
+        </div>
+
+        <div class="dossier-alerta">
+            ⚠️ DOCUMENTO CONFIDENCIAL ⚠️
+        </div>
+
+        <h2>PROCURADO</h2>
+        <p class="dossier-subtitulo">
+            UNIDADE ESPECIAL DE INVESTIGAÇÃO DE MAUS JOGADORES
+        </p>
+
+        <div class="dossier-corpo">
+
+            <div class="foto-procurado">
+                <img
+                    src="imagens/jiba.jpg"
+                    alt="Fotografia do jogador JIBA_peek"
+                />
+                <span class="carimbo">PROCURADO</span>
+            </div>
+
+            <div class="dossier-info">
+                <p class="etiqueta">NOME DE CÓDIGO</p>
+                <h3>JIBA_peek</h3>
+
+                <p class="etiqueta">ACUSAÇÕES</p>
+                <ul>
+                    <li>Abuso de desculpas esfarrapadas</li>
+                    <li>Desaparecimento em momentos decisivos</li>
+                    <li>Disparos suspeitos contra paredes</li>
+                    <li>Excesso de confiança sem provas</li>
+                </ul>
+
+                <div class="recompensa">
+                    <span>RECOMPENSA PELA CAPTURA</span>
+                    <strong id="recompensaJiba">🌯 1 KEBAB</strong>
+                </div>
+
+                id="estadoJibaGabinete" class="estado-procurado">
+                    ESTADO: SOB INVESTIGAÇÃO
+                </p>
+            </div>
+
+        </div>
+
+        <div class="dossier-acoes">
+            <button id="investigarJiba" type="button">
+                🔎 INVESTIGAR SUSPEITO
+            </button>
+
+            <button id="trocarRecompensa" type="button">
+                💰 ATUALIZAR RECOMPENSA
+            </button>
+        </div>
+
+        <div id="resultadoInvestigacao" class="resultado-investigacao"
+             aria-live="polite">
+            O dossier está aberto. Aguardam-se novas provas...
+        </div>
+
+        <div class="dossier-rodape">
+            SE ENCONTRAR O SUSPEITO, AVISE A EQUIPA.
+            NÃO LHE ENTREGUE UMA AWP.
+        </div>
+
+    </div>
+</section>
+<!-- TRIBUNAL DO JIBA_peek -->
+<section id="tribunal" class="tribunal">
+    <p class="numero">⚠️ TRIBUNAL COMPETITIVO // CASO Nº 002</p>
+
+    <h2>⚖️ O TRIBUNAL DO JIBA_peek</h2>
+
+    <p class="tribunal-intro">
+        O suspeito foi apanhado em mais uma partida.
+        A equipa exige respostas. A justiça exige pontaria.
+    </p>
+
+    <div class="caso">
+        <div class="caso-topo">
+            <span>FICHEIRO CONFIDENCIAL</span>
+            <span>ESTADO: POR JULGAR</span>
+        </div>
+
+        <h3>ACUSADO: JIBA_peek</h3>
+
+        <p id="acusacao">
+            O processo aguarda julgamento...
+        </p>
+
+        <p id="prova" class="prova">
+            🔎 As provas serão reveladas durante o julgamento.
+        </p>
+
+        <div id="sentenca" class="sentenca">
+            ⚖️ À espera de decisão judicial...
+        </div>
+
+        <button id="julgarBtn" class="botao-julgar">
+            ⚖️ JULGAR O JIBA
+        </button>
+
+        <button id="copiarSentenca" class="botao-copiar" hidden>
+            📋 COPIAR SENTENÇA
+        </button>
+    </div>
+</section>
+
+    <!-- NOVO MINI-JOGO TÁTICO -->
+    <section class="secao" id="operacao">
+        <div class="titulo-secao">
+            <p class="etiqueta">OPERAÇÃO ESPECIAL // DIFICULDADE: DIFÍCIL</p>
+            <h2>Sobrevive à <span>ronda.</span></h2>
+            <p>Uma decisão errada pode custar a ronda. Tens coragem para assumir o comando, Jiba_Peek?</p>
+        </div>
+
+        <div class="jogo-painel">
+            <div class="jogo-cabecalho">
+                <div>
+                    <p class="numero">SIMULADOR TÁTICO CS2</p>
+                    <h3 id="jogo-titulo">Operação: Última Esperança</h3>
+                </div>
+                <span class="jogo-dificuldade">HARD MODE</span>
+            </div>
+
+            <div class="jogo-indicadores">
+                <div class="jogo-indicador">
+                    <span>❤️ VIDA</span>
+                    <strong id="jogo-vida">100</strong>
+                </div>
+                <div class="jogo-indicador">
+                    <span>🛡️ EQUIPA</span>
+                    <strong id="jogo-equipa">100</strong>
+                </div>
+                <div class="jogo-indicador">
+                    <span>🎯 PONTOS</span>
+                    <strong id="jogo-pontos">0</strong>
+                </div>
+                <div class="jogo-indicador">
+                    <span>📍 SITUAÇÃO</span>
+                    <strong id="jogo-ronda">1 / 6</strong>
+                </div>
+            </div>
+
+            <div class="jogo-barras">
+                <div>
+                    <div class="jogo-barra-label"><span>Vida</span><span id="jogo-vida-texto">100%</span></div>
+                    <div class="jogo-barra-fundo"><div class="jogo-barra jogo-barra-vida" id="jogo-vida-barra"></div></div>
+                </div>
+                <div>
+                    <div class="jogo-barra-label"><span>Moral da equipa</span><span id="jogo-equipa-texto">100%</span></div>
+                    <div class="jogo-barra-fundo"><div class="jogo-barra jogo-barra-equipa" id="jogo-equipa-barra"></div></div>
+                </div>
+            </div>
+
+            <div class="jogo-cenario">
+                <p class="numero" id="jogo-etiqueta">RONDA 01 // INFORMAÇÕES CLASSIFICADAS</p>
+                <h3 id="jogo-pergunta">A equipa está sob pressão. Qual é o teu plano?</h3>
+                <p id="jogo-descricao">Lê a situação e escolhe com cuidado. Nem sempre a decisão mais agressiva é a melhor.</p>
+            </div>
+
+            <div class="jogo-opcoes" id="jogo-opcoes">
+                <button class="jogo-opcao" type="button" data-escolha="0">Aguardar e analisar a situação.</button>
+                <button class="jogo-opcao" type="button" data-escolha="1">Avançar sozinho sem avisar ninguém.</button>
+                <button class="jogo-opcao" type="button" data-escolha="2">Comunicar com a equipa e coordenar.</button>
+            </div>
+
+            <div class="jogo-feedback" id="jogo-feedback" aria-live="polite">
+                <strong>MISSÃO A AGUARDAR</strong>
+                <p>Escolhe uma opção para iniciar a operação.</p>
+            </div>
+
+            <div class="jogo-acoes">
+                <button class="botao" id="jogo-continuar" type="button" disabled>PRÓXIMA SITUAÇÃO</button>
+                <button class="botao botao-secundario" id="jogo-reiniciar" type="button">RECOMEÇAR OPERAÇÃO</button>
+            </div>
+
+            <p class="aviso-perfil">Simulação fictícia de decisões táticas. Não altera nem acede ao jogo real ou à conta Steam.</p>
+        </div>
+    </section>
+
+    <!-- CERTIFICADO -->
+    <section class="secao secao-alternada" id="certificado">
+        <div class="titulo-secao">
+            <p class="etiqueta">DOCUMENTO OFICIAL // CS2</p>
+            <h2>O certificado de <span>JIBA_peek.</span></h2>
+            <p>Completa missões, atualiza o certificado e guarda a prova da tua suposta grandeza.</p>
+        </div>
+
+        <div class="certificado" id="certificado-imprimir">
+            <div class="certificado-moldura">
+                <div class="certificado-topo"><span class="certificado-simbolo">✦</span><p>THE LAST BOT ALIVE</p><span class="certificado-simbolo">✦</span></div>
+                <p class="certificado-etiqueta">CERTIFICADO OFICIAL DE DESEMPENHO</p>
+                <h3>CERTIFICADO DE <span>BOT</span></h3>
+                <p class="certificado-texto">A comissão reconhece oficialmente que</p>
+                <p class="certificado-nickname">JIBA_peek</p>
+                <p class="certificado-texto">participou nas operações de Counter-Strike 2 e demonstrou níveis de confiança que continuam sob investigação.</p>
+                <div class="certificado-dados">
+                    <div><span>NÍVEL ATUAL</span><strong id="certificado-nivel">BOT DE SERVIÇO</strong></div>
+                    <div><span>XP ACUMULADO</span><strong id="certificado-xp">0 XP</strong></div>
+                    <div><span>MISSÕES CONCLUÍDAS</span><strong id="certificado-missoes">0 / 6</strong></div>
+                </div>
+                <div class="certificado-veredicto"><span>VEREDICTO FINAL</span><strong id="certificado-titulo">BOT EM OBSERVAÇÃO 🤖</strong></div>
+                <p class="certificado-rodape">Documento humorístico sem valor oficial. Não representa estatísticas reais do jogo.</p>
+            </div>
+        </div>
+
+        <div class="certificado-botoes">
+            <button class="botao" id="botao-atualizar-certificado" type="button">ATUALIZAR CERTIFICADO</button>
+            <button class="botao botao-secundario" id="botao-imprimir-certificado" type="button">IMPRIMIR / GUARDAR PDF</button>
+        </div>
+        <p class="aviso-perfil">Antes de imprimir, atualiza o certificado para incluir o progresso mais recente.</p>
+    </section>
+
+    <!-- AVALIAÇÃO -->
+    <section class="secao" id="avaliacao">
+        <div class="titulo-secao">
+            <p class="etiqueta">COMISSÃO DE AVALIAÇÃO</p>
+            <h2>Será que temos <span>campeão?</span></h2>
+            <p>Uma avaliação absolutamente científica. Confia.</p>
+        </div>
+        <div class="cartao cartao-interativo">
+            <div class="icone">🏆</div>
+            <h3>Classificação do suspeito</h3>
+            <p>Descobre o nível atribuído ao jogador pela nossa comissão muito pouco imparcial.</p>
+            <button class="botao" id="botao-rank" type="button">REVELAR CLASSIFICAÇÃO</button>
+            <p id="resultado-rank" class="resultado" aria-live="polite">Classificação por determinar.</p>
+        </div>
+    </section>
+
+<!-- MUSEU DOS DESASTRES DO JIBA -->
+<section id="museu-jiba" class="museu-jiba">
+
+    <div class="museu-cabecalho">
+        <p class="museu-etiqueta">THE LAST BOT ALIVE APRESENTA</p>
+        <h2>🏆 MUSEU DOS DESASTRES</h2>
+        <p>Há jogadores lendários. E depois há o JIBA_peek.</p>
+    </div>
+
+    <div class="premio-cartao">
+
+        <div class="premio-topo">
+            <span>🏅 CERIMÓNIA OFICIAL</span>
+            <span>EDIÇÃO 2026</span>
+        </div>
+
+        <div class="premio-conteudo">
+
+            <div class="premio-fotografia">
+                <img src="imagens/jiba.jpg" alt="Fotografia oficial de JIBA_peek">
+                <span class="selo-mvp">MVP?</span>
+            </div>
+
+            <div class="premio-informacao">
+                <p class="premio-categoria">PRÉMIO Nº 001</p>
+
+                <h3>MVP DOS INIMIGOS</h3>
+
+                <p class="premio-jogador">Atribuído a: <strong>JIBA_peek</strong></p>
+
+                <p id="frasePremioJiba" class="premio-frase">
+                    Pela dedicação exemplar em tornar as rondas mais fáceis...
+                    para os adversários.
+                </p>
+
+                <div class="premio-estrelas" id="estrelasJiba">
+                    ★ ★ ★ ★ ★
+                </div>
+
+                <p id="classificacaoJiba" class="premio-classificacao">
+                    NÍVEL DE DESASTRE: POR CONFIRMAR
+                </p>
+
+                <button type="button" id="botaoPremioJiba">
+                    🏆 ATRIBUIR PRÉMIO
+                </button>
+
+                <button type="button" id="botaoDiplomaJiba" class="botao-diploma" hidden>
+                    📜 REVELAR DIPLOMA
+                </button>
+            </div>
+
+        </div>
+
+        <div class="premio-rodape">
+            <span>THE LAST BOT ALIVE</span>
+            <span>100% OFICIAL • 0% DE COMPETÊNCIA GARANTIDA</span>
+        </div>
+
+    </div>
+
+    <div id="diplomaJiba" class="diploma-jiba" hidden>
+        <div class="diploma-borda">
+            <p>THE LAST BOT ALIVE</p>
+            <h3>📜 DIPLOMA DE HONRA</h3>
+
+            <p>Certifica-se que</p>
+            <h2>JIBA_peek</h2>
+
+            <p>foi oficialmente distinguido com o título de</p>
+
+            <h3 class="diploma-titulo">
+                🏆 MVP DOS INIMIGOS
+            </h3>
+
+            <p>
+                Pela sua contribuição extraordinária para o sucesso
+                da equipa adversária.
+            </p>
+
+            <p class="diploma-assinatura">
+                Assinado: O Departamento de Desastres do CS2
+            </p>
+
+            <button type="button" id="botaoFecharDiploma">
+                FECHAR DIPLOMA
+            </button>
+        </div>
+    </div>
+
+</section>
+<!-- FIM DO MUSEU DOS DESASTRES -->
+ 
+<!-- MINI-JOGO: SOBREVIVE AO JIBA -->
+<section id="sobrevive-jiba" class="sobrevive-jiba">
+
+    <div class="sobrevive-cabecalho">
+        <p class="sobrevive-etiqueta">MISSÃO DE ALTO RISCO</p>
+        <h2>🎮 SOBREVIVE AO JIBA</h2>
+        <p>Tens uma ronda para sobreviver. E o teu colega é o JIBA_peek.</p>
+    </div>
+
+    <div class="jogo-cartao">
+
+        <div class="jogo-status">
+            <span id="rondaJiba">RONDA 1</span>
+            <span id="pontosJiba">SOBREVIVÊNCIA: 0</span>
+        </div>
+
+        <div class="jogo-imagem">
+            <img src="imagens/jiba.jpg" alt="JIBA_peek, o teu colega nesta missão">
+            <span>O TEU COLEGA DE EQUIPA</span>
+        </div>
+
+        <div class="jogo-historia">
+            <h3 id="tituloMissaoJiba">A ronda começou...</h3>
+            <p id="textoMissaoJiba">
+                Estás no mapa com o Jiba. Ouves passos, tens pouca informação
+                e ele acabou de dizer: "Confia em mim".
+            </p>
+        </div>
+
+        <div id="opcoesJiba" class="opcoes-jiba">
+            <button type="button" class="opcao-jiba" data-escolha="0">
+                🛡️ Ficar numa posição segura
+            </button>
+
+            <button type="button" class="opcao-jiba" data-escolha="1">
+                🏃 Seguir o Jiba
+            </button>
+
+            <button type="button" class="opcao-jiba" data-escolha="2">
+                👀 Perguntar qual é o plano
+            </button>
+        </div>
+
+        <div id="resultadoJiba" class="resultado-jiba" hidden>
+            <p id="mensagemResultadoJiba"></p>
+            <button type="button" id="continuarJiba">
+                ➡️ CONTINUAR MISSÃO
+            </button>
+        </div>
+
+        <div id="fimJiba" class="fim-jiba" hidden>
+            <h3 id="tituloFinalJiba">MISSÃO TERMINADA</h3>
+            <p id="textoFinalJiba"></p>
+            <button type="button" id="reiniciarJiba">
+                🔄 JOGAR NOVAMENTE
+            </button>
+        </div>
+
+    </div>
+
+    <p class="aviso-jiba">
+        ⚠️ O Departamento de Competência não se responsabiliza pelas decisões do Jiba.
+    </p>
+
+</section>
+<!-- FIM DO MINI-JOGO --> 
+<!-- CENTRAL DE COMUNICAÇÕES DO JIBA -->
+<section id="central-jiba" class="central-jiba">
+
+    <div class="central-cabecalho">
+        <p class="central-etiqueta">TRANSMISSÃO ENCRIPTADA · CS2</p>
+        <h2>🎙️ CENTRAL DE COMUNICAÇÕES</h2>
+        <p>Quando o Jiba abre o microfone, ninguém está a salvo.</p>
+    </div>
+
+    <div class="radio-jiba">
+
+        <div class="radio-topo">
+            <span>📡 JIBA RADIO</span>
+            <span class="radio-online">
+                <span class="radio-luz"></span> EM TRANSMISSÃO
+            </span>
+        </div>
+
+        <div class="radio-painel">
+
+            <div class="radio-display">
+                <p class="radio-frequencia">FREQUÊNCIA: 0.000 COMPETÊNCIA</p>
+
+                <h3 id="tituloModoJiba">ESCOLHE UM CANAL</h3>
+
+                <p id="fraseRadioJiba">
+                    O microfone está aberto. Infelizmente.
+                </p>
+
+                <div class="radio-onda">〰️〰️〰️〰️〰️</div>
+            </div>
+
+            <div class="radio-modos">
+                <button type="button" class="modo-radio" data-modo="toxico">
+                    🤬 MODO TÓXICO
+                    <span>Reclamar com a equipa</span>
+                </button>
+
+                <button type="button" class="modo-radio" data-modo="diana">
+                    👩 MODO DIANA
+                    <span>A culpa é sempre tua!</span>
+                </button>
+
+                <button type="button" class="modo-radio" data-modo="desculpas">
+                    🛜 MODO DESCULPAS
+                    <span>Lag, rato e conspirações</span>
+                </button>
+
+                <button type="button" class="modo-radio" data-modo="contraditorio">
+                    👑 MODO CONTRADITÓRIO
+                    <span>O melhor jogador do mundo...</span>
+                </button>
+            </div>
+
+            <div class="radio-acoes">
+                <button type="button" id="botaoTransmitirJiba">
+                    📢 TRANSMITIR FRASE
+                </button>
+
+                <button type="button" id="botaoPararJiba" class="botao-parar">
+                    🔇 SILÊNCIO!
+                </button>
+            </div>
+
+            <p id="estadoRadioJiba" class="radio-estado">
+                SISTEMA PRONTO · À ESPERA DE COMUNICAÇÕES
+            </p>
+
+        </div>
+
+        <div class="radio-rodape">
+            THE LAST BOT ALIVE · TODAS AS CULPAS SÃO MERA COINCIDÊNCIA
+        </div>
+
+    </div>
+
+</section>
+<!-- FIM DA CENTRAL DE COMUNICAÇÕES -->
+</main>
+
+<!-- SCANNER OFICIAL DO JIBA -->
+<section class="scanner-jiba" id="scannerJiba">
+
+    <div class="scanner-cabecalho">
+        <p class="scanner-etiqueta">JIBA_peek // SISTEMA DE VIGILÂNCIA</p>
+        <h2>Scanner Oficial do <span>Jiba</span></h2>
+        <p>Estamos a investigar os seus peeks suspeitos...</p>
+    </div>
+
+    <div class="scanner-painel">
+
+        <div class="scanner-foto">
+            <img src="imagens/peek.jpg" alt="JIBA_peek sob investigação">
+
+            <div class="scanner-linha"></div>
+
+            <span class="scanner-selo">ALVO DETETADO</span>
+            <span class="scanner-coordenadas">CAM_01 // CS2</span>
+        </div>
+
+        <div class="scanner-info">
+            <p class="scanner-status" id="estadoScanner">
+                ● SISTEMA PRONTO
+            </p>
+
+            <h3>JIBA_peek</h3>
+            <p class="scanner-descricao">
+                Análise avançada de mira, reflexos e decisões questionáveis.
+            </p>
+
+            <div class="scanner-dados">
+                <div>
+                    <span>PRECISÃO ESTIMADA</span>
+                    <strong id="precisaoScanner">???</strong>
+                </div>
+
+                <div>
+                    <span>QUALIDADE DO PEEK</span>
+                    <strong id="qualidadeScanner">???</strong>
+                </div>
+
+                <div>
+                    <span>NÍVEL DE CONFIANÇA</span>
+                    <strong id="confiancaScanner">100%</strong>
+                </div>
+            </div>
+
+            <button class="botao-scanner" id="botaoScanner">
+                🔎 ANALISAR PEEK
+            </button>
+
+            <div class="scanner-relatorio" id="relatorioScanner" aria-live="polite">
+                <strong>À ESPERA DE ANÁLISE...</strong>
+                <p>Carrega no botão para revelar os resultados secretos.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="scanner-rodape">
+        JIBA SECURITY SYSTEMS © 2026 — A culpa continua a ser do lag.
+    </p>
+
+</section>
+
+<!-- MINIJOGO: DESARMA A BOMBA -->
+<section class="bomba-jiba" id="bombaJiba">
+
+    <div class="bomba-intro">
+        <p class="bomba-etiqueta">JIBA_peek // MISSÃO CRÍTICA</p>
+        <h2>DESARMA A <span>BOMBA</span></h2>
+        <p>O Jiba plantou a bomba. Agora alguém tem de resolver o problema.</p>
+    </div>
+
+    <div class="bomba-painel">
+
+        <div class="bomba-visual">
+            <div class="bomba-luz" id="bombaLuz"></div>
+
+            <div class="bomba-display" id="bombaDisplay">
+                00:30
+            </div>
+
+            <div class="bomba-dispositivo">
+                <span class="bomba-c4">C4</span>
+                <div class="bomba-teclado">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                </div>
+                <p>COUNTER-TERRORIST DEVICE</p>
+            </div>
+        </div>
+
+        <div class="bomba-jogo">
+            <p class="bomba-status" id="bombaStatus">
+                ● MISSÃO POR INICIAR
+            </p>
+
+            <h3>Protocolo de desativação</h3>
+
+            <p id="bombaInstrucao">
+                Tens 30 segundos para descobrir o código de 3 dígitos.
+                Se falhares, o Jiba vai dizer que era impossível.
+            </p>
+
+            <div class="bomba-pistas" id="bombaPistas">
+                <span>PISTA 01: ???</span>
+                <span>PISTA 02: ???</span>
+                <span>PISTA 03: ???</span>
+            </div>
+
+            <div class="bomba-codigo">
+                <label for="codigoBomba">INTRODUZ O CÓDIGO</label>
+                <input
+                    type="number"
+                    id="codigoBomba"
+                    placeholder="000"
+                    min="0"
+                    max="999"
+                    disabled
+                >
+            </div>
+
+            <button id="botaoIniciarBomba" class="botao-bomba">
+                💣 INICIAR MISSÃO
+            </button>
+
+            <button id="botaoDesarmarBomba" class="botao-bomba"
+                disabled>
+                🔓 DESARMAR BOMBA
+            </button>
+
+            <div id="resultadoBomba" class="resultado-bomba"
+                aria-live="polite">
+                <strong>AGUARDANDO ORDEM...</strong>
+                <p>Prepara-te. Desta vez não podes culpar o lag.</p>
+            </div>
+
+        </div>
+
+    </div>
+<!-- ESTATÍSTICAS E CLASSIFICAÇÃO -->
+<div class="estatisticas-bomba">
+
+    <div class="estatisticas-cabecalho">
+        <span>JIBA SECURITY // PLAYER STATS</span>
+        <span id="patenteBomba">🎖️ RECRUTA</span>
+    </div>
+
+    <div class="estatisticas-grelha">
+
+        <div class="estatistica-item">
+            <span>🏆 VITÓRIAS</span>
+            <strong id="vitoriasBomba">0</strong>
+        </div>
+
+        <div class="estatistica-item">
+            <span>💥 DERROTAS</span>
+            <strong id="derrotasBomba">0</strong>
+        </div>
+
+        <div class="estatistica-item">
+            <span>⚡ MELHOR TEMPO</span>
+            <strong id="recordeBomba">--</strong>
+        </div>
+
+        <div class="estatistica-item">
+            <span>🎮 PARTIDAS</span>
+            <strong id="partidasBomba">0</strong>
+        </div>
+
+    </div>
+
+    <div class="progresso-patente">
+        <div class="progresso-patente-texto">
+            <span>PROGRESSO DA PATENTE</span>
+            <span id="progressoPatenteTexto">0 / 5 vitórias</span>
+        </div>
+
+        <div class="progresso-patente-fundo">
+            <div id="progressoPatenteBarra"></div>
+        </div>
+    </div>
+
+    <p class="estatisticas-nota">
+        Estatísticas guardadas neste navegador. O Jiba não pode apagá-las
+        com a desculpa do lag. 😈
+    </p>
+
+</div>
+
+
+    <p class="bomba-aviso">
+        SIMULAÇÃO DE JOGO — NÃO EXISTE QUALQUER BOMBA REAL.
+    </p>
+
+</section>
+
+<footer>
+    <p>THE LAST <span>BOT</span> ALIVE</p>
+    <p>Joga para ganhar. Perde para arranjar desculpas.</p>
+    <p class="rodape-pequeno">Site de fãs, feito por diversão. Não oficial nem afiliado à Valve.</p>
+</footer>
+</body>
+</html>
+
+<!-- MINI-JOGO: APANHAR O JIBA -->
+
+<section class="apanhar-jiba">
+    <p class="apanhar-etiqueta">🚨 OPERAÇÃO ESPECIAL</p>
+
+    <h2>APANHAR O JIBA!</h2>
+
+    <p>
+        O suspeito está a tentar iniciar mais uma partida de CS2.
+        Diana, apanha-o antes que seja tarde!
+    </p>
+
+    <div class="painel-jiba">
+        <span>⏱️ Tempo: <strong id="tempoJiba">10</strong>s</span>
+        <span>🎯 Tentativas: <strong id="tentativasJiba">0</strong></span>
+    </div>
+
+    <button id="iniciarCacaJiba" class="botao-caca-jiba">
+        🚀 INICIAR OPERAÇÃO
+    </button>
+
+    <div id="arenaJiba" class="arena-jiba">
+        <p id="instrucaoJiba">O Jiba está a preparar uma desculpa...</p>
+
+        <button id="alvoJiba" class="alvo-jiba" disabled
+            aria-label="Apanhar o Jiba">
+            <img src="imagens/jiba.jpg" alt="O Jiba a tentar escapar">
+            <span>APANHA-ME! 😂</span>
+        </button>
+    </div>
+
+    <h3 id="resultadoCacaJiba" class="resultado-caca-jiba">
+        A missão aguarda autorização...
+    </h3>
+</section>
+
+<!-- ===== GABINETE DA DIANA ===== -->
+<section id="gabineteDiana" class="gabinete-diana">
+
+    <div class="gabinete-cabecalho">
+        <span class="gabinete-etiqueta">
+            ACESSO RESTRITO
+        </span>
+
+        <h2>👑 O Gabinete da Diana</h2>
+
+        <p>
+            Central de controlo oficial do Jiba.
+            Aqui, quem manda sou eu.
+        </p>
+    </div>
+
+    <div class="gabinete-cartao">
+        <h3>📋 Estado do suspeito</h3>
+
+        <p>Nome: <strong>JIBA_peek</strong></p>
+
+        <p>Estado: <span id="estadoJiba">
+            À espera de ordens...
+        </span></p>
+
+        <p>Autoridade da Diana:
+            <strong id="pontosDiana">0</strong> pontos
+        </p>
+    </div>
+
+    <div class="gabinete-cartao">
+        <h3>⚖️ Escolhe o destino do Jiba</h3>
+
+        <p>
+            Diretora, qual é a tua decisão de hoje?
+        </p>
+
+        <div class="gabinete-botoes">
+            <button onclick="decidirJiba('treino')">
+                🎯 Treino obrigatório
+            </button>
+
+            <button onclick="decidirJiba('castigo')">
+                🚨 Castigo oficial
+            </button>
+
+            <button onclick="decidirJiba('missao')">
+                🕵️ Missão secreta
+            </button>
+
+            <button onclick="decidirJiba('perdao')">
+                😇 Dar uma oportunidade
+            </button>
+        </div>
+
+        <div id="ordemDiana" class="ordem-diana">
+            À espera da decisão da Diretora...
+        </div>
+    </div>
+
+<div class="trofeu-jiba">
+    <img
+        src="imagens/calo.jpg"
+        alt="Jiba a segurar o seu troféu"
+    >
+
+    <div class="trofeu-legenda">
+        <span class="trofeu-etiqueta">🏆 PRÉMIO OFICIAL</span>
+
+        <h3>O Troféu do Jiba</h3>
+
+        <p>
+            Para quem culpa os outros sempre que morre.
+        </p>
+
+        <span class="trofeu-descricao">
+            A culpa nunca é dele. A equipa é que não está à altura.
+        </span>
+    </div>
+</div>
+
+</section>
+<!-- ===== FIM DO GABINETE ===== -->
+
+<!-- SECÇÃO: O TREINADOR MORREU PRIMEIRO -->
+<section class="treinador-section" id="treinador">
+    <div class="treinador-conteudo">
+
+        <span class="treinador-etiqueta">
+            🚨 RELATÓRIO OFICIAL DA PARTIDA
+        </span>
+
+        <h2>O TREINADOR MORREU PRIMEIRO</h2>
+
+        <p class="treinador-intro">
+            O Jiba foi eliminado. A equipa está em silêncio.
+            O treinador tem algo a dizer.
+        </p>
+
+        <div class="treinador-frase">
+            "EU NÃO MORRI POR SER MAU.
+            VOCÊS É QUE NÃO JOGAM NADA!"
+        </div>
+
+        <div class="treinador-status" id="treinadorStatus">
+            <span>💀</span>
+            <p>A investigação ainda não começou...</p>
+        </div>
+
+        <div class="culpado-cartao">
+            <span class="culpado-titulo">🔎 RESULTADO DA INVESTIGAÇÃO</span>
+
+            <h3 id="culpadoNome">
+                Quem é o culpado desta vez?
+            </h3>
+
+            <p id="culpadoDescricao">
+                O Jiba foi eliminado e recusou assumir responsabilidades.
+                Carrega no botão para investigar o caso.
+            </p>
+        </div>
+
+        <button
+            class="botao-investigar"
+            id="botaoInvestigar"
+            type="button"
+        >
+            🔍 DESCOBRIR QUEM TEVE A CULPA
+        </button>
+
+        <div class="treinador-estatisticas">
+            <div class="estatistica">
+                <strong id="mortesInvestigadas">0</strong>
+                <span>Mortes investigadas</span>
+            </div>
+
+            <div class="estatistica">
+                <strong id="culpasDiana">0</strong>
+                <span>Vezes que a Diana teve culpa</span>
+            </div>
+
+            <div class="estatistica">
+                <strong id="culpasEquipa">0</strong>
+                <span>Vezes que a equipa teve culpa</span>
+            </div>
+        </div>
+
+        <p class="treinador-rodape">
+            ⚖️ Tribunal do CS2 — O Jiba está inocente até prova em contrário.
+        </p>
+
+    </div>
+</section>
+<!-- FIM DA SECÇÃO -->
+
+<!-- JIBA ESTÁ A FALAR -->
+<section class="jiba-fala" id="jibaFala">
+
+    <span class="jiba-fala-etiqueta">🎙️ COMUNICAÇÃO OFICIAL</span>
+
+    <h2>O JIBA ESTÁ A FALAR...</h2>
+
+    <p class="jiba-fala-intro">
+        Atenção, equipa! O Jiba tem mais uma explicação
+        para apresentar ao tribunal.
+    </p>
+
+    <div class="jiba-dialogo">
+
+        <div class="jiba-avatar">🎮</div>
+
+        <div class="jiba-mensagem">
+            <span class="jiba-nome">JIBA_peek</span>
+
+            <p id="fraseJiba">
+                Estou a analisar a situação...
+            </p>
+
+            <span id="contextoJiba" class="jiba-contexto">
+                À espera de uma desculpa oficial.
+            </span>
+        </div>
+
+    </div>
+
+    <div class="jiba-botoes">
+        <button type="button" id="botaoFalarJiba">
+            🎤 DEIXAR O JIBA FALAR
+        </button>
+
+        <button type="button" id="botaoCopiarJiba">
+            📋 COPIAR FRASE
+        </button>
+    </div>
+
+    <p id="estadoCopiaJiba" class="jiba-estado-copia"
+       aria-live="polite"></p>
+
+    <p class="jiba-fala-rodape">
+        ⚠️ O jogador não assume qualquer responsabilidade pelos acontecimentos.
+    </p>
+
+</section>
+<!-- FIM JIBA ESTÁ A FALAR -->
+
+<!-- TRADUTOR OFICIAL DO JIBA -->
+<section class="tradutor-jiba" id="tradutorJiba">
+
+    <span class="tradutor-etiqueta">🌍 DE JIBA PARA PORTUGUÊS</span>
+
+    <h2>O TRADUTOR OFICIAL DO JIBA</h2>
+
+    <p class="tradutor-intro">
+        Ele diz uma coisa. Nós explicamos o que realmente quer dizer.
+        A tradução pode ser dolorosa para o ego do jogador.
+    </p>
+
+    <div class="tradutor-cartao">
+
+        <div class="tradutor-bloco">
+            <span class="tradutor-titulo">🎤 JIBA DIZ:</span>
+
+            <p id="jibaOriginal">
+                "Eu nunca tenho culpa!"
+            </p>
+        </div>
+
+        <div class="tradutor-seta">⬇️</div>
+
+        <div class="tradutor-bloco tradutor-resultado">
+            <span class="tradutor-titulo">🌍 TRADUÇÃO OFICIAL:</span>
+
+            <p id="jibaTraducao">
+                "A culpa é de toda a gente, menos minha."
+            </p>
+        </div>
+
+        <div class="tradutor-selo" id="jibaSelo">
+            ⚖️ Tradução certificada pelo Tribunal do CS2
+        </div>
+
+    </div>
+
+    <div class="tradutor-botoes">
+        <button type="button" id="botaoTraduzirJiba">
+            🔄 TRADUZIR OUTRA FRASE
+        </button>
+
+        <button type="button" id="botaoCopiarTraducao">
+            📋 COPIAR TRADUÇÃO
+        </button>
+    </div>
+
+    <p id="estadoTradutorJiba" aria-live="polite"></p>
+
+    <p class="tradutor-aviso">
+        ⚠️ Nenhum ego foi responsabilizado durante estas traduções.
+    </p>
+
+</section>
+<!-- FIM DO TRADUTOR OFICIAL -->
+
+<section class="dianinha-chefe" id="dianinha">
+    <p class="chefe-etiqueta">ÁREA RESTRITA • ACESSO DA ADMINISTRAÇÃO</p>
+
+    <h2>A CHEFE QUE NEM JOGA 👑</h2>
+
+    <img
+        src="imagens/didi.jpg"
+        alt="DianinhaPT, a chefe do servidor"
+        class="foto-dianinha"
+    >
+
+    <h3>DIANINHAPT</h3>
+
+    <p class="frase-chefe">
+        "Não jogo CS, mas até o treinador obedece."
+    </p>
+
+    <div class="estatisticas-chefe">
+        <p>🎮 Jogos disputados: <strong>0</strong></p>
+        <p>👑 Autoridade sobre o Jiba: <strong>100%</strong></p>
+        <p>🤡 Desculpas do Jiba: <strong>Incontáveis</strong></p>
+    </div>
+
+    <p class="nota-chefe">
+        *Estatísticas oficiais de uma investigação nada imparcial.*
+    </p>
+</section>
